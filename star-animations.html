@@ -38,17 +38,17 @@
             transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* Animation 1: Pop & Glow (Static after) */
-        .reveal-pop .star.visible {
+        /* Animation 1: Staggered & Glow (Static after) */
+        .reveal-stagger .star.visible {
             opacity: 1;
             transform: scale(1);
             text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
         }
-        .reveal-pop .star.visible:nth-child(1) { transition-delay: 0.1s; }
-        .reveal-pop .star.visible:nth-child(2) { transition-delay: 0.2s; }
-        .reveal-pop .star.visible:nth-child(3) { transition-delay: 0.3s; }
-        .reveal-pop .star.visible:nth-child(4) { transition-delay: 0.4s; }
-        .reveal-pop .star.visible:nth-child(5) { transition-delay: 0.5s; }
+        .reveal-stagger .star.visible:nth-child(1) { transition-delay: 0.1s; }
+        .reveal-stagger .star.visible:nth-child(2) { transition-delay: 0.2s; }
+        .reveal-stagger .star.visible:nth-child(3) { transition-delay: 0.3s; }
+        .reveal-stagger .star.visible:nth-child(4) { transition-delay: 0.4s; }
+        .reveal-stagger .star.visible:nth-child(5) { transition-delay: 0.5s; }
 
         /* Animation 2: Fly-in & Spin (Static after) */
         .reveal-fly .star {
@@ -132,11 +132,11 @@
         </p>
     </div>
 
-    <!-- 1. Pop & Glow -->
-    <div class="section-divider">Card 1: "Pop & Glow" </div>
+    <!-- 1. Staggered & Glow -->
+    <div class="section-divider">Card 1: "Staggered & Glow" </div>
     <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
         <div class="dark-card shadow-2xl">
-            <div class="star-container reveal-pop mb-6">
+            <div class="star-container reveal-stagger mb-6">
                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
             </div>
             <p class="text-2xl italic leading-relaxed mb-8">
@@ -199,7 +199,7 @@
     </section>
 
     <!-- 4. Combined Staggered Pulse Pop -->
-    <div class="section-divider">Card 4: Combined "Staggered Pulse Pop" (New Instruction)</div>
+    <div class="section-divider">Card 4: Combined "Staggered Pulse Pop"</div>
     <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-combined mb-6">
