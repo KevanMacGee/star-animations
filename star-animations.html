@@ -15,7 +15,7 @@
         }
 
         h1, h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', sans-serif;
         }
 
         .dark-card {
@@ -113,12 +113,14 @@
 
         .section-divider {
             height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
+        }
+
+        .demo-title {
+            width: min(100%, 500px);
+            margin-bottom: 1rem;
+            color: #555;
+            font-family: 'Inter', sans-serif;
             font-style: italic;
-            border-bottom: 1px solid #eee;
         }
     </style>
 </head>
@@ -128,13 +130,14 @@
     <div class="max-w-6xl mx-auto px-8 pt-20">
         <h1 class="text-5xl mb-6 text-center w-full">Varying star animations</h1>
         <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-12 text-center">
-            Each example is spaced way out so you can watch each animation individually as it is triggered on scroll. 
+            Each example is spaced way out so you can watch each animation individually as it is triggered on scroll. (Scroll down to see them all in action.)
         </p>
     </div>
 
     <!-- 1. Staggered & Glow -->
-    <div class="section-divider">Card 1: "Staggered & Glow" </div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+    <div class="section-divider" aria-hidden="true"></div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+        <h2 class="demo-title">Card 1: "Staggered &amp; Glow"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-stagger mb-6">
                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -155,8 +158,9 @@
     </section>
 
     <!-- 2. Fly-in -->
-    <div class="section-divider">Card 2: "Fly-in & Spin"</div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+    <div class="section-divider" aria-hidden="true"></div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+        <h2 class="demo-title">Card 2: "Fly-in &amp; Spin"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-fly mb-6">
                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -177,8 +181,9 @@
     </section>
 
     <!-- 3. Pulse Wave -->
-    <div class="section-divider">Card 3: "Pulse Wave"</div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+    <div class="section-divider" aria-hidden="true"></div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+        <h2 class="demo-title">Card 3: "Pulse Wave"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-pulse mb-6">
                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -199,8 +204,9 @@
     </section>
 
     <!-- 4. Combined Staggered Pulse Pop -->
-    <div class="section-divider">Card 4: Combined "Staggered Pulse Pop"</div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+    <div class="section-divider" aria-hidden="true"></div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+        <h2 class="demo-title">Card 4: Combined "Staggered Pulse Pop"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-combined mb-6">
                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
