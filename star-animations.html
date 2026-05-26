@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engagement Model - Star Animations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .dark-card {
+            background-color: #1a302a; /* Deep forest green from screenshot */
+            color: white;
+            padding: 3rem;
+            border-radius: 4px;
+            position: relative;
+            max-width: 500px;
+        }
+
+        /* Base Star Style */
+        .star {
+            display: inline-block;
+            color: #d4af37; /* Gold color */
+            font-size: 1.5rem;
+            margin-right: 4px;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Animation 1: Pop & Glow (Static after) */
+        .reveal-pop .star.visible {
+            opacity: 1;
+            transform: scale(1);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+        .reveal-pop .star.visible:nth-child(1) { transition-delay: 0.1s; }
+        .reveal-pop .star.visible:nth-child(2) { transition-delay: 0.2s; }
+        .reveal-pop .star.visible:nth-child(3) { transition-delay: 0.3s; }
+        .reveal-pop .star.visible:nth-child(4) { transition-delay: 0.4s; }
+        .reveal-pop .star.visible:nth-child(5) { transition-delay: 0.5s; }
+
+        /* Animation 2: Fly-in & Spin (Static after) */
+        .reveal-fly .star {
+            transform: translateY(20px) rotate(-45deg);
+        }
+        .reveal-fly .star.visible {
+            opacity: 1;
+            transform: translateY(0) rotate(0) scale(1);
+        }
+        .reveal-fly .star.visible:nth-child(1) { transition-delay: 0.1s; }
+        .reveal-fly .star.visible:nth-child(2) { transition-delay: 0.15s; }
+        .reveal-fly .star.visible:nth-child(3) { transition-delay: 0.2s; }
+        .reveal-fly .star.visible:nth-child(4) { transition-delay: 0.25s; }
+        .reveal-fly .star.visible:nth-child(5) { transition-delay: 0.3s; }
+
+        /* Animation 3: Pulse Wave (One-time, then static) */
+        @keyframes singlePulse {
+            0% { transform: scale(0.5); opacity: 0; filter: brightness(1); }
+            50% { transform: scale(1.5); opacity: 1; filter: brightness(1.8); }
+            100% { transform: scale(1); opacity: 1; filter: brightness(1); }
+        }
+        .reveal-pulse .star.visible {
+            animation: singlePulse 0.8s ease-out forwards;
+        }
+        .reveal-pulse .star.visible:nth-child(1) { animation-delay: 0.1s; }
+        .reveal-pulse .star.visible:nth-child(2) { animation-delay: 0.2s; }
+        .reveal-pulse .star.visible:nth-child(3) { animation-delay: 0.3s; }
+        .reveal-pulse .star.visible:nth-child(4) { animation-delay: 0.4s; }
+        .reveal-pulse .star.visible:nth-child(5) { animation-delay: 0.5s; }
+
+        /* NEW Animation 4: STAGGERED PULSE POP (Combined) */
+        /* This combines the entry (Pop) with a momentary glow (Pulse) in one sequence */
+        @keyframes pulsePopEffect {
+            0% { 
+                transform: scale(0.2); 
+                opacity: 0; 
+                text-shadow: 0 0 0px rgba(212, 175, 55, 0);
+            }
+            50% { 
+                transform: scale(1.6); 
+                opacity: 1; 
+                text-shadow: 0 0 30px rgba(212, 175, 55, 1);
+                filter: brightness(1.5);
+            }
+            100% { 
+                transform: scale(1); 
+                opacity: 1; 
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+                filter: brightness(1);
+            }
+        }
+
+        .reveal-combined .star.visible {
+            animation: pulsePopEffect 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        .reveal-combined .star.visible:nth-child(1) { animation-delay: 0.1s; }
+        .reveal-combined .star.visible:nth-child(2) { animation-delay: 0.2s; }
+        .reveal-combined .star.visible:nth-child(3) { animation-delay: 0.3s; }
+        .reveal-combined .star.visible:nth-child(4) { animation-delay: 0.4s; }
+        .reveal-combined .star.visible:nth-child(5) { animation-delay: 0.5s; }
+
+        .section-divider {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-style: italic;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Hero Content -->
+    <div class="max-w-6xl mx-auto px-8 pt-20">
+        <h1 class="text-5xl mb-6">The <span class="italic font-bold">Standard</span> of Excellence.</h1>
+        <p class="text-xl text-gray-500 max-w-2xl mb-12">
+            Our engagement model is built upon three non-negotiable pillars that ensure your organization doesn't just adapt, but leads.
+        </p>
+    </div>
+
+    <!-- 1. Pop & Glow -->
+    <div class="section-divider">Card 1: "Pop & Glow" (Restored)</div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+        <div class="dark-card shadow-2xl">
+            <div class="star-container reveal-pop mb-6">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="text-2xl italic leading-relaxed mb-8">
+                "Corporate Trust provided more than just advice; they delivered a strategic renaissance for our executive team."
+            </p>
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-gray-400 rounded-full mr-4 overflow-hidden">
+                    <img src="https://ui-avatars.com/api/?name=David+Richardson&background=random" alt="Avatar">
+                </div>
+                <div>
+                    <p class="font-bold uppercase tracking-widest text-sm">David Richardson</p>
+                    <p class="text-xs text-gray-400">CHIEF EXECUTIVE, GLOBAL LOGISTICS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Fly-in -->
+    <div class="section-divider">Card 2: "Fly-in & Spin"</div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+        <div class="dark-card shadow-2xl">
+            <div class="star-container reveal-fly mb-6">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="text-2xl italic leading-relaxed mb-8">
+                "Precision is their baseline. Their ability to navigate complex regulatory landscapes is unmatched."
+            </p>
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-gray-400 rounded-full mr-4 overflow-hidden">
+                    <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=random" alt="Avatar">
+                </div>
+                <div>
+                    <p class="font-bold uppercase tracking-widest text-sm">Sarah Chen</p>
+                    <p class="text-xs text-gray-400">OPERATIONS DIRECTOR, FINTECH SOLUTIONS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pulse Wave -->
+    <div class="section-divider">Card 3: "Pulse Wave"</div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+        <div class="dark-card shadow-2xl">
+            <div class="star-container reveal-pulse mb-6">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="text-2xl italic leading-relaxed mb-8">
+                "Truly the gold standard of financial consulting. We couldn't ask for a more capable partner."
+            </p>
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-gray-400 rounded-full mr-4 overflow-hidden">
+                    <img src="https://ui-avatars.com/api/?name=Marcus+Vane&background=random" alt="Avatar">
+                </div>
+                <div>
+                    <p class="font-bold uppercase tracking-widest text-sm">Marcus Vane</p>
+                    <p class="text-xs text-gray-400">MANAGING PARTNER, VANE ASSETS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Combined Staggered Pulse Pop -->
+    <div class="section-divider">Card 4: Combined "Staggered Pulse Pop" (New Instruction)</div>
+    <section class="max-w-6xl mx-auto px-8 py-24 flex justify-end">
+        <div class="dark-card shadow-2xl">
+            <div class="star-container reveal-combined mb-6">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="text-2xl italic leading-relaxed mb-8">
+                "The combined effect is striking. It draws attention exactly where it needs to be as you scroll."
+            </p>
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-gray-400 rounded-full mr-4 overflow-hidden">
+                    <img src="https://ui-avatars.com/api/?name=Eleanor+Pritchard&background=random" alt="Avatar">
+                </div>
+                <div>
+                    <p class="font-bold uppercase tracking-widest text-sm">Eleanor Pritchard</p>
+                    <p class="text-xs text-gray-400">CHAIRWOMAN, HERITAGE TRUST</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center text-gray-400">
+        End of Animation Showcase
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stars = entry.target.querySelectorAll('.star');
+                    stars.forEach(star => {
+                        star.classList.add('visible');
+                    });
+                    // Only run once
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.star-container').forEach(container => {
+            observer.observe(container);
+        });
+    </script>
+</body>
+</html>
