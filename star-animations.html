@@ -111,8 +111,43 @@
         .reveal-combined .star.visible:nth-child(4) { animation-delay: 0.4s; }
         .reveal-combined .star.visible:nth-child(5) { animation-delay: 0.5s; }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 240px;
+        }
+
         .section-divider {
             height: 60vh;
+        }
+
+        /* Sticky hero / nav */
+        .hero-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #ffffff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .hero-nav-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .hero-nav-links a:hover {
+            background-color: #d4af37;
+            color: #fff;
+            transform: scale(1.1);
         }
 
         .demo-title {
@@ -126,18 +161,26 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- Hero Content -->
-    <div class="max-w-6xl mx-auto px-8 pt-20">
-        <h1 class="text-5xl mb-6 text-center w-full">Varying star animations</h1>
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-12 text-center">
-            Each example is spaced way out so you can watch each animation individually as it is triggered on scroll.<br>
-            (Scroll down to see them all in action.)
-        </p>
+    <!-- Hero Nav -->
+    <div class="hero-nav">
+        <div class="max-w-6xl mx-auto px-8 pt-10 pb-6">
+            <h1 class="text-5xl mb-4 text-center w-full">Varying star animations</h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-4 text-center">
+                Each example is spaced way out so you can watch each animation individually as it is triggered on scroll.<br>
+                (Scroll down to see them all in action.)
+            </p>
+            <nav class="hero-nav-links flex justify-center gap-4 pb-2">
+                <a href="#section-1" title="Staggered & Glow">1</a>
+                <a href="#section-2" title="Fly-in & Spin">2</a>
+                <a href="#section-3" title="Pulse Wave">3</a>
+                <a href="#section-4" title="Staggered Pulse Pop">4</a>
+            </nav>
+        </div>
     </div>
 
     <!-- 1. Staggered & Glow -->
     <div class="section-divider" aria-hidden="true"></div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+    <section id="section-1" class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
         <h2 class="demo-title">Card 1: "Staggered &amp; Glow"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-stagger mb-6">
@@ -160,7 +203,7 @@
 
     <!-- 2. Fly-in -->
     <div class="section-divider" aria-hidden="true"></div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+    <section id="section-2" class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
         <h2 class="demo-title">Card 2: "Fly-in &amp; Spin"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-fly mb-6">
@@ -183,7 +226,7 @@
 
     <!-- 3. Pulse Wave -->
     <div class="section-divider" aria-hidden="true"></div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+    <section id="section-3" class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
         <h2 class="demo-title">Card 3: "Pulse Wave"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-pulse mb-6">
@@ -206,7 +249,7 @@
 
     <!-- 4. Combined Staggered Pulse Pop -->
     <div class="section-divider" aria-hidden="true"></div>
-    <section class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
+    <section id="section-4" class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
         <h2 class="demo-title">Card 4: Combined "Staggered Pulse Pop"</h2>
         <div class="dark-card shadow-2xl">
             <div class="star-container reveal-combined mb-6">
