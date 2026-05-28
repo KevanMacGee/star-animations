@@ -1,1 +1,1 @@
-![Star Animations](Recording%202026-05-27%20235417.gif)
+<video src="star-animations-demo.mp4" controls></video>
