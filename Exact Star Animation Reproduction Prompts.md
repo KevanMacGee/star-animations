@@ -1,18 +1,3 @@
-# Star Animation Demonstration
-
-<div align="center">
-  <video src="https://github.com/user-attachments/assets/5adc003c-89a0-4106-9332-1de1ed097229" controls width="100%"></video>
-</div>
-
-This demo page shows six different star animation effects. Below are the prompts for recreating each effect; you can also use the demo code in this repository as a reference.
-
-1. [Staggered & Glow](#animation-1--staggered--glow)
-2. [Fly-in & Spin](#animation-2--fly-in--spin)
-3. [Pulse Wave](#animation-3--pulse-wave)
-4. [Staggered Pulse Pop](#animation-4--staggered-pulse-pop)
-5. [Falling Spin / Wobble Settle](#animation-5--falling-spin--wobble-settle)
-6. [Falling Spin / Magnetic Snap](#animation-6--falling-spin--magnetic-snap)
-
 # Animation 1 — Staggered & Glow
 
 Reproduce the **“Staggered & Glow”** star animation from my reference exactly.
