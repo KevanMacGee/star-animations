@@ -234,6 +234,53 @@
             height: 60vh;
         }
 
+        .section-divider--intro {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: clamp(3.5rem, 8vh, 5rem);
+        }
+
+        .scroll-cue {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.25s ease;
+        }
+
+        .scroll-cue:hover {
+            transform: translateY(6px);
+        }
+
+        .scroll-cue:focus-visible {
+            outline: 3px solid #d4af37;
+            outline-offset: 10px;
+            border-radius: 8px;
+        }
+
+        .scroll-cue svg {
+            width: clamp(86px, 9vw, 112px);
+            height: auto;
+            overflow: visible;
+            filter: drop-shadow(0 12px 16px rgba(26, 48, 42, 0.16));
+            animation: scroll-nudge 4s ease-in-out infinite;
+        }
+
+        @keyframes scroll-nudge {
+            0%, 4%, 12%, 20%, 100% { transform: translateY(0); }
+            8%, 16% { transform: translateY(9px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-cue {
+                transition: none;
+            }
+            .scroll-cue svg {
+                animation: none;
+            }
+        }
+
         /* Sticky hero / nav */
         .hero-nav {
             position: sticky;
@@ -290,8 +337,7 @@
         <div class="max-w-6xl mx-auto px-8 pt-10 pb-6">
             <h1 class="text-4xl mb-4 text-center w-full">Varying star animations</h1>
             <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-4 text-center">
-                Each example is spaced way out so you can watch each animation individually as it is triggered on scroll.<br>
-                (Scroll down to see them all in action.)
+                Each example is spaced way out so you can watch each animation individually as it is triggered on scroll. Scroll down to see them all in action, or click the numbered buttons to jump to a specific example.
             </p>
             <nav class="hero-nav-links flex justify-center gap-4 pb-2">
                 <a href="#" class="home-btn" title="Replay animations" aria-label="Replay animations" onclick="location.reload(); return false;">
@@ -313,7 +359,13 @@
     </div>
 
     <!-- 1. Staggered & Glow -->
-    <div class="section-divider" aria-hidden="true"></div>
+    <div class="section-divider section-divider--intro">
+        <a class="scroll-cue" href="#section-1" aria-label="Scroll to the first star animation">
+            <svg viewBox="0 0 128 160" aria-hidden="true" focusable="false">
+                <path d="M43 8 Q43 2 49 2 H79 Q85 2 85 8 V43 H116 Q124 43 120 51 L70 148 Q64 159 58 148 L8 51 Q4 43 12 43 H43 Z" fill="#1a302a"/>
+            </svg>
+        </a>
+    </div>
     <section id="section-1" class="max-w-6xl mx-auto px-8 py-24 flex flex-col items-center">
         <h2 class="demo-title">Card 1: "Staggered &amp; Glow"</h2>
         <div class="dark-card shadow-2xl">
